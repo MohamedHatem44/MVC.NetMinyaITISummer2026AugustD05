@@ -31,6 +31,9 @@ namespace MVCDemoD05.Controllers
             return View(employeesReadVM);
         }
         /*------------------------------------------------------------------*/
+        // ~/Employee/Details/1
+        // ~/Employee/Details?id=1
+        // ~/emp/1
         [HttpGet]
         public IActionResult Details(int id)
         {

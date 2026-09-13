@@ -36,10 +36,35 @@ namespace MVCDemoD05
             app.UseAuthorization();
 
             app.MapStaticAssets();
+
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}")
                 .WithStaticAssets();
+
+            //app.MapControllerRoute(
+            //    name: "default",
+            //    pattern: "{action=Index}/{controller=Home}/{id?}/{name?}")
+            //    .WithStaticAssets();
+
+            //app.MapControllerRoute(
+            //    name: "default",
+            //    pattern: "{controller=Home}/{action=Index}/{id:int?}/{name:alpha?}")
+            //    .WithStaticAssets();
+
+            //app.MapControllerRoute("CustomRoute1",
+            //    "emp/{id:int}", new
+            //    {
+            //        controller = "Employee",
+            //        action = "Details"
+            //    });
+
+            //app.MapControllerRoute("CustomRoute1",
+            //    "emp/{id:int}", new
+            //    {
+            //        controller = "Employee",
+            //        action = "Index"
+            //    });
 
             app.Run();
         }
