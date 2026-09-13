@@ -1,5 +1,9 @@
 ﻿@model ICollection<EmployeeReadVM>
 
+@* @{
+    Layout = "_MyCustomLayout";
+} *@
+
 <h1 style="color:green; text-align:center">
     All Employees
 </h1>
@@ -54,3 +58,9 @@
             </td>
         </tr>
 </table>
+
+@section CustomSection {
+    <div class="d-flex justify-content-center text-bg-primary">
+        Custom Section
+    </div>
+}
