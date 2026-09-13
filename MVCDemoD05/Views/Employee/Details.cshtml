@@ -1,0 +1,16 @@
+﻿@model EmployeeReadVM
+
+﻿<h1 style="color:green; text-align:center">
+    Employee Details
+</h1>
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Employee Id: @Model.Id</h5>
+        <h5 class="card-title">Employee Name: @Model.Name</h5>
+        <h5 class="card-title">Employee Age: @Model.Age</h5>
+        <h5 class="card-title">Employee Salary: @Model.Salary</h5>
+        <h5 class="card-title">Employee Department: @Model.Department</h5>
+        <a asp-action="Index" asp-controller="Employee" class="btn btn-outline-secondary">Cancel</a>
+    </div>
+</div>

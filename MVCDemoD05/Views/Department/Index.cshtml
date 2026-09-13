@@ -1,0 +1,61 @@
+@model IEnumerable<DepartmentReadVM>
+
+<h1 style="color:green; text-align:center">
+    All Departments
+</h1>
+
+<br />
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(d => d.DepartmentId)</th>
+            <th scope="col">@Html.DisplayNameFor(d => d.Name)</th>
+            <th scope="col">Employees Count</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dept in Model)
+        {
+            <tr>
+                <th>@dept.DepartmentId</th>
+                <td>@dept.Name</td>
+                <td>@dept.EmployeesCount</td>
+                <td>
+                    <a asp-controller="Department"
+                       asp-action="Details"
+                       asp-route-id="@dept.DepartmentId"
+                       class="btn btn-outline-primary">
+                        View Details
+                    </a>
+                    <a asp-controller="Department"
+                       asp-action="Edit"
+                       asp-route-id="@dept.DepartmentId"
+                       class="btn btn-outline-secondary">
+                        Edit
+                    </a>
+                    <a asp-controller="Department"
+                       asp-action="Delete"
+                       asp-route-id="@dept.DepartmentId"
+                       class="btn btn-outline-danger">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">
+                <a asp-controller="Department"
+                   asp-action="Create"
+                   class="btn btn-outline-success">
+                    Create New Department
+                </a>
+            </td>
+        </tr>
+    </tfoot>
+</table>

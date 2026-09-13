@@ -1,0 +1,56 @@
+﻿@model ICollection<EmployeeReadVM>
+
+<h1 style="color:green; text-align:center">
+    All Employees
+</h1>
+
+<br />
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Department</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <th>@emp.Id</th>
+                <td>@emp.Name</td>
+                <td>@emp.Age</td>
+                <td>@emp.Salary</td>
+                <td>@emp.Department</td>
+                <td>
+                    <a asp-action="Details" asp-controller="Employee" asp-route-id="@emp.Id" class="btn btn-outline-primary">
+                        Details
+                    </a>
+                    <a asp-action="Edit" asp-controller="Employee" asp-route-id="@emp.Id" class="btn btn-outline-secondary">
+                        Edit
+                    </a>
+                    <a asp-action="Delete" asp-controller="Employee" asp-route-id="@emp.Id" class="btn btn-outline-danger">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                <a href="~/Employee/CreateV01" class="btn btn-outline-success">
+                    Create New Employee V01
+                </a>
+                <a href="~/Employee/CreateV02" class="btn btn-outline-success">
+                    Create New Employee V02
+                </a>
+            </td>
+        </tr>
+</table>

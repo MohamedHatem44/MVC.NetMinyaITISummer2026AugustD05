@@ -1,0 +1,57 @@
+﻿@model EmployeeCreateVM
+
+<h1 style="color:green; text-align:center">
+    Create New Employee V02
+</h1>
+
+<br />
+<br />
+<hr />
+
+<form asp-action="CreateV02" asp-controller="Employee" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+    <div class="form-group mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Age" class="form-label"></label>
+        <input asp-for="Age" class="form-control" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Salary" class="form-label"></label>
+        <input asp-for="Salary" class="form-control" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="DepartmentId" class="form-label"></label>
+        <select asp-for="DepartmentId" class="form-select" asp-items="@Model.Departments">
+        </select>
+        <span asp-validation-for="DepartmentId" class="text-danger"></span>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3">
+        <input type="submit" class="btn btn-outline-success" value="Create Employee" />
+        @* <a href="~/Employee/Index" class="btn btn-outline-secondary">Cancel</a> *@
+        <a asp-action="Index" asp-controller="Employee" class="btn btn-outline-secondary">Cancel</a>
+    </div>
+
+</form>
+
+@section Scripts {
+
+    @* <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script> *@
+
+    @* @Html.Partial("_ValidationScriptsPartial") *@
+    @* @Html.RenderPartialAsync("_ValidationScriptsPartial") *@
+
+     <partial name="_ValidationScriptsPartial" />
+}

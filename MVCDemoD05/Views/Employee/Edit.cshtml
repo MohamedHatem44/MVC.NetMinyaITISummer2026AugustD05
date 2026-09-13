@@ -1,0 +1,45 @@
+﻿@model EmployeeEditVM
+
+<h1 style="color:green; text-align:center">
+    Edit Employee
+</h1>
+
+<br />
+<br />
+<hr />
+
+<form asp-action="Edit" asp-controller="Employee" method="post">
+
+    <div class="form-group mb-3">
+        <label asp-for="Id" class="form-label"></label>
+        <input asp-for="Id" class="form-control"  readonly />
+        @* <input type="number" name="Id" class="form-control" id="Id" value="@Model.Id" hidden /> *@
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Age" class="form-label"></label>
+        <input asp-for="Age" class="form-control" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Salary" class="form-label"></label>
+        <input asp-for="Salary" class="form-control" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="DepartmentId" class="form-label"></label>
+        <select asp-for="DepartmentId" class="form-select" asp-items="@Model.Departments">
+        </select>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3">
+        <input type="submit" class="btn btn-outline-success" value="Save" />
+        <a asp-action="Index" asp-controller="Employee" class="btn btn-outline-secondary">Cancel</a>
+    </div>
+
+</form>

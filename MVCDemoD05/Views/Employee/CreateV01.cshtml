@@ -1,0 +1,39 @@
+﻿@model Employee
+
+<h1 style="color:green; text-align:center">
+    Create New Employee V01
+</h1>
+
+<br />
+<br />
+<hr />
+
+<form asp-action="CreateV01" asp-controller="Employee" method="post" >
+
+    <div class="form-group mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Age" class="form-label"></label>
+        <input asp-for="Age" class="form-control"  />
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Salary" class="form-label"></label>
+        <input asp-for="Salary" class="form-control" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="DepartmentId" class="form-label"></label>
+        <select class="form-select" asp-items="ViewBag.Departments">
+        </select>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3">
+        <input type="submit" class="btn btn-outline-success" value="Create Employee" />
+        <a asp-action="Index" asp-controller="Employee" class="btn btn-outline-secondary">Cancel</a>
+    </div>
+
+</form>
